@@ -1,35 +1,29 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, AppRegistry, TextInput, Button } from 'react-native';
+import React from 'react';
+import { View, Text, Button } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import HomeScreen from './src/pages/Home'
+import DetailsScreen from './src/pages/Details'
+import LoginScreen from './src/pages/Login'
 
 export default class App extends React.Component {
-
-  constructor(props) {
-      super(props);
-      this.state = { text: 'Email', password: 'Senha'};
-  }
-
   render() {
-    return (
-      <View style={{alignItems: 'center'}}>
-        <Text>"Amizades próximas, conversas particulares."</Text>
-        <Text>No ADVISE.NOW você pode</Text>
-        <Text>pedir conselhos, ou aconselhar alguém.</Text>
-        <Text>Funciona com conversas confidenciais reconfortantes.</Text>
-        <Text>É gratificante e revelador!</Text>
-        <TextInput
-          style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 1}}
-          onChangeText={(text) => this.setState({text})}
-          value={this.state.text}
-        />
-        <TextInput
-          style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 1}}
-          value={this.state.password}
-        />
-        <Button
-          title="Entrar"
-          color="#006080"
-        />
-      </View>
-    );
+    return <RootStack />;
   }
 }
+
+const RootStack = StackNavigator(
+  {
+    Login: {
+      screen: LoginScreen,
+    },
+    Home: {
+      screen: HomeScreen,
+    },
+    Details: {
+      screen: DetailsScreen,
+    },
+  },
+  {
+    initialRouteName: 'Login',
+  }
+);
