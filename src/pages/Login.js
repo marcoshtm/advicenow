@@ -14,20 +14,12 @@ export default class LoginScreen extends React.Component {
       <ImageBackground
       source={require('./login1_bg.png')}
       style={{width: '100%', height: '100%'}}>
-      <View style={{
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}>
-
+      <View style={styles.standardview} >
         <Text style={{color: 'white'}}>"Amizades próximas, conversas particulares."</Text>
         <Text style={{color: 'white', marginTop: 10}}>No APPTESTE você pode</Text>
-        <Text style={{color: 'white'}}>pedir conselhos, ou aconselhar alguém.</Text>
-        <TextInput
-          style={styles.emailbox}
-          value={this.state.email}
-        />
+        <Text style={{color: 'white', marginBottom: 30}}>pedir conselhos, ou aconselhar alguém.</Text>
+        <Text style={{color: 'white', marginBottom: 5}}>{this.state.email}</Text>
+        <TextInput style={styles.emailbox} />
 
         <Button
           title="                           ACHEI INTERESSANTE                           "
@@ -55,5 +47,11 @@ export const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
     paddingHorizontal: 10
+  },
+  standardview: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 })
