@@ -5,19 +5,22 @@ import { StackNavigator } from 'react-navigation';
 export default class HomeScreen extends React.Component {
   render() {
     return (
+      
       <View style={{flex: 1}}>
         <View style={{flex: 1}}>
           <View style={styles.standardview}>
             <Button
-              title="Dar um conselho"
+              title="                  Dar um conselho                    "
               onPress={() => this.props.navigation.navigate('Give')}
-              style={{width: 200, marginBottom: 20}}
+              style={{marginBottom: 20}}
+              color="#006080"
             />
           </View>
           <View style={styles.standardview}>
             <Button
-              title="Pedir um conselho"
+              title="                Pedir um conselho                    "
               onPress={() => this.props.navigation.navigate('Ask')}
+              color="#006080"
             />
           </View>
         </View>

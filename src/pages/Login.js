@@ -6,7 +6,7 @@ export default class LoginScreen extends React.Component {
 
   constructor(props) {
       super(props);
-      this.state = { email: 'Digite aqui o seu email'};
+      this.state = { email: ''};
   }
 
   render() {
@@ -15,16 +15,22 @@ export default class LoginScreen extends React.Component {
       source={require('./login1_bg.png')}
       style={{width: '100%', height: '100%'}}>
       <View style={styles.standardview} >
-        <Text style={{color: 'white'}}>"Amizades próximas, conversas particulares."</Text>
-        <Text style={{color: 'white', marginTop: 10}}>No APPTESTE você pode</Text>
-        <Text style={{color: 'white', marginBottom: 30}}>pedir conselhos, ou aconselhar alguém.</Text>
-        <Text style={{color: 'white', marginBottom: 5}}>{this.state.email}</Text>
-        <TextInput style={styles.emailbox} />
+        <Text style={{color: 'white', marginBottom: 5}}>"Amizades próximas, conversas particulares."</Text>
+        <Text style={{color: 'white', marginBottom: 30}}>Peça conselhos, ou aconselhe alguém.</Text>
+        <TextInput
+          placeholder="Nome"
+          underlineColorAndroid="#ffffff"
+          style={styles.textbox}
+        />
+        <TextInput
+          placeholder="Email"
+          underlineColorAndroid="#ffffff"
+          style={styles.textbox}
+        />
 
         <Button
-          title="                           ACHEI INTERESSANTE                           "
+          title="                  ACHEI INTERESSANTE, INICIAR!                    "
           color="#006080"
-          style={{width: '100%'}}
           onPress={() => this.props.navigation.navigate('Home')}
         />
         <Text style={{color: 'white', marginTop: 10}}>Funciona com conversas confidenciais reconfortantes.</Text>
@@ -36,17 +42,16 @@ export default class LoginScreen extends React.Component {
 }
 
 export const styles = StyleSheet.create({
-  emailbox: {
+  textbox: {
     justifyContent: 'center',
     alignContent: 'center',
     height: 40,
     width: 200,
     borderColor: '#006080',
     borderWidth: 1,
-    color: 'white',
-    marginTop: 10,
-    marginBottom: 20,
-    paddingHorizontal: 10
+    marginBottom: 10,
+    paddingHorizontal: 10,
+    backgroundColor: '#ffffff'
   },
   standardview: {
     flex: 1,

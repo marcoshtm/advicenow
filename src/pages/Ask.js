@@ -6,10 +6,15 @@ export default class AskScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Ask Screen</Text>
-        <TextInput style={styles.askbox} />
+        <Text>Peça um conselho</Text>
+        <TextInput
+          placeholder="Que conselho você gostaria de pedir?"
+          underlineColorAndroid="#ffffff"
+          style={styles.textbox}
+        />
         <Button
           title="Go to Home"
+          color="#006080"
           onPress={() => this.props.navigation.navigate('Home')}
         />
       </View>
@@ -18,12 +23,17 @@ export default class AskScreen extends React.Component {
 }
 
 export const styles = StyleSheet.create({
-  askbox: {
+  textbox: {
     width: 300,
     height: 100,
-    borderColor: 'gray',
+    justifyContent: 'center',
+    alignContent: 'center',
     borderWidth: 1,
+    borderColor: '#5c5c3d',
     marginTop: 20,
-    marginBottom: 20
+    marginBottom: 20,
+    paddingHorizontal: 10,
+    backgroundColor: '#ffffff',
+    borderRadius:10
   }
 })
