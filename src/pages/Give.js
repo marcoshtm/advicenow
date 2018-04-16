@@ -9,7 +9,7 @@ export default class GiveScreen extends React.Component {
         <View style={styles.advicerequestbox}>
             <Text style={{backgroundColor: '#ffffff', paddingHorizontal: 30, paddingVertical: 30}}>Estou em dúvida sobre qual carreira seguir. É quase impossível decidir. Eu adoro A mas meu pai diz que não tem como viver disso. Eu acho que vou fazer B que é difícil, minha família apóia, mas será que não vou gostar?</Text>
         </View>
-        <View style={{ flex: 1, alignItems: 'center' }}>
+        <View style={{ flex: 3, alignItems: 'center' }}>
           <View style={{ flex: 0.2, flexDirection: 'row', alignItems: 'center'}}>
             <Image source={require('./marcos_fb_c.png')} />
             <Text>Dê o seu conselho</Text>
@@ -17,10 +17,11 @@ export default class GiveScreen extends React.Component {
           <TextInput
             placeholder="Qual o seu conselho?"
             underlineColorAndroid="#ffffff"
+            multiline={true}
             style={styles.textbox}
           />
           <Button
-            title="Go to Home"
+            title="Enviar"
             color="#006080"
             onPress={() => this.props.navigation.navigate('Home')}
           />

@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import LoginScreen from './src/pages/Login'
 import HomeScreen from './src/pages/Home'
 import AskScreen from './src/pages/Ask'
 import GiveScreen from './src/pages/Give'
-import LoginScreen from './src/pages/Login'
+import ViewScreen from './src/pages/View'
 
 export default class App extends React.Component {
   render() {
@@ -25,6 +26,9 @@ const RootStack = StackNavigator(
     },
     Give: {
       screen: GiveScreen,
+    },
+    View: {
+      screen: ViewScreen,
     },
   },
   {
